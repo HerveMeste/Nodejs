@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+<form action="/" method="post" class="ui form">
+    <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+    </div>
+    <button type="submit" class="ui blue labeled sumbit icon button">
+        <i class="icon edit"></i>Envoyez
+    </button>
+</form>
+
+<div class="ui comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+    <% for (message of messages) { %> 
+        <div class="comment">
+            <a class="avatar" href="/message/<%= message.id %>">
+                <img src="https://images.discordapp.net/avatars/706606012248883201/00059d79ca88d2a73d2379d79870be89.png?size=128" alt="">
+            </a>
+            <div class="content">
+                <div class="metadata">
+                    <div class="date">
+                        <%= message.created_at.fromNow() %> 
+                    </div>
+                </div>
+               <div class="text"><%= message.content %></div> 
+            </div>
+        </div>
+        <% } %> 
+</div>
+
+
+<%- include('footer'); -%>

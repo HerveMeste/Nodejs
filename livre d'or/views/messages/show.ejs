@@ -1,0 +1,20 @@
+<%- include('../pages/header'); -%>
+
+<div class="ui comments">
+        <div class="comment">
+            <a class="avatar" href="/message/<%= message.id %>">
+                <img src="https://images.discordapp.net/avatars/706606012248883201/00059d79ca88d2a73d2379d79870be89.png?size=128" alt="">
+            </a>
+            <div class="content">
+                <div class="metadata">
+                    <div class="date">
+                        <%= message.created_at.fromNow() %> 
+                    </div>
+                </div>
+               <div class="text"><%= message.content %></div> 
+            </div>
+        </div>
+</div>
+
+
+<%- include('../pages/footer'); -%>
